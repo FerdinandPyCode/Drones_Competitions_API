@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'toys',
+    'drones',
 ]
 
 MIDDLEWARE = [
@@ -77,8 +78,18 @@ WSGI_APPLICATION = 'restful01.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        # Replace drones with your desired database name
+        'NAME': 'drones',
+        # Replace username with your desired user name
+        'USER': 'ferdi',
+        # Replace password with your desired password
+        'PASSWORD': 'password',
+        # Replace 127.0.0.1 with the PostgreSQL host
+        'HOST': '127.0.0.1',
+        # Replace 5432 with the PostgreSQL configured port
+        # in case you aren't using the default port
+        'PORT': '5432',
     }
 }
 
